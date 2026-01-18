@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis no CSS</title>
+</head>
+<body>
+    <h1>Variáveis no CSS</h1>
+    <p>
+        Variáveis CSS (ou propriedades personalizadas) permitem armazenar valores reutilizáveis (cores, fontes, etc.) em um único lugar, facilitando a manutenção e consistência do código, com sintaxe --nome-variavel: valor; para declarar e var(--nome-variavel) para usar, geralmente declaradas globalmente em :root ou localmente em selectores específicos, e são sensíveis a maiúsculas/minúsculas e acessíveis via DOM, possibilitando temas e actualizações dinâmicas com JavaScript. 
+    </p>
+
+    <h2>Como declarar </h2>
+    <p>
+        <ul><li>Global (todo o site): Dentro do seletor :root.</li>
+        :root { <br>
+  --cor-primaria: #A47864; <br>
+  --fonte-principal: Arial, sans-serif; <br>
+}
+<li>Local (em um seletor específico):</li>
+
+.header { <br>
+  --cor-primaria: #ff5733; /* Apenas para o header */ <br>
+  background-color: var(--cor-primaria); <br>
+}
+
+</li></ul>
+    </p>
+
+    <h2>Como usar</h2>
+<ul><li>Use a função var() e passe o nome da variável como argumento
+body { <br>
+  background-color: var(--cor-primaria); /*A declarada no :root{}*/<br>
+  font-family: var(--fonte-principal); <br>
+}
+
+    </li></ul>
+</body>
+</html>

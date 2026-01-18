@@ -1,0 +1,270 @@
+@charset "UTF-8";
+
+/*
+Cores monocromaticas escolhidas no Color Adobe
+1ª #c5ebd6
+2ª #83e1ad
+3ª #3ddc84
+4ª #2fa866
+5ª #1a5c37
+6ª #063d1e
+*/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+
+:root {
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --font-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --font-destaque: "Orbitron", sans-serif;
+    --font-android: 'Android', cursive;
+}
+
+/*Remover as margens e os espacamentos entre todos os elementos para podermos configurar por parte*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body {
+    background-color: var(--cor0);
+    font-family: var(--font-padrao);
+}
+
+/*Adicionar o símbolo de um link quando for externo*/
+a.externo::after{
+    content: '\00A0\🔗';
+}
+/* Configurações básicas */
+.top-bar {
+    background-color: var(--cor0); /* Cor escura profissional */
+    color: #000;
+    font-size: 15px;
+    padding: 8px 0;
+    font-family: var(--font-padrao);
+}
+
+.top-bar .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Separa os grupos para as extremidades */
+    align-items: center;
+    padding: 0 15px;
+}
+
+.top-bar-contact span {
+    margin-right: 15px;
+}
+
+.top-bar-info a {
+    color: #000;
+    text-decoration: none;
+    margin-left: 15px;
+    border-left: 1px solid #555;
+    padding-left: 15px;
+}
+
+.top-bar-info a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade: esconde contactos em telas muito pequenas */
+@media (max-width: 500px) {
+    .top-bar-contact {
+        display: none;
+    }
+    .top-bar .container {
+        justify-content: center;
+    }
+}
+
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor2), var(--cor4));
+    height: 180px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 6px rgba(0, 0, 0, 0.363);
+}
+nav>a{
+    color: white;
+    padding: 10px; /*Espaco entre os itens*/
+    text-decoration: none; /*Remover o sublinhado*/
+    border-radius: 10px;
+  transition-duration: 1s;
+}
+
+nav>a:hover{
+    color: var(--cor5);
+    background-color: var(--cor0);
+      font-weight: bold; /*Negritar ao passar o mouse*/
+    
+}
+header>h1 {
+    color: white;
+    font-family: var(--font-destaque);
+    font-optical-sizing: auto;
+     font-weight: normal; /*Tirar o negrito que por padrao vem nos h*/
+    font-style: normal;
+    font-size: 3em;
+    margin-bottom: 20px;
+text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.394);
+}
+
+header>p {
+    color: white;
+    font-family: var(--font-destaque);
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: auto;
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.394);
+}
+
+main {
+    background-color: white;
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main h1 {
+    color: var(--cor5);
+    font-family: var(--font-android);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+
+main h2 {
+    font-family: var(--font-android);
+    color: var(--cor4);
+    font-weight: normal; /*Tirar o negrito que por padrao vem nos h*/
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+text-indent: 10px;
+}
+
+main p{    
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1.1em;
+    line-height: 2em;
+}
+
+main strong{
+    color: var(--cor4);
+    font-weight: bold;
+    padding: 2px 4px;
+}
+
+main a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    padding: 2px 4px;
+     background-color: var(--cor0);
+    padding: 2px 4px;
+}
+
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor0);
+    background-color: var(--cor5);
+}
+
+main img {
+    width: 100%;
+}
+
+main img.pequena {
+    max-width: 350px;
+    /*A img nao e um bloco. Por isso, temos de força-la a centralizar com um display block acompanhado de margin auto*/
+    display: block;
+    margin: auto;
+}
+
+div.video{
+    background-color: var(--cor5);
+    /*Esticar a div para para a direita, em baixo e a esquerda*/
+    margin: 0px -20px 30px -20px; 
+    padding: 20px;
+    /*Criar um "contêiner" de posicionamento para elementos filhos com position: absolute, para que eles se posicionem dentro dele. */
+   
+    position: relative;
+    /*Ajustar para o video caber na area e ao reproduzir, remover as laterais pretas.
+    
+    Para ver o efeito disso, diminua ou aumente a % e isso varia de video para video*/ 
+ padding-bottom: 56.8%; 
+}
+
+div.video > iframe{
+    /* Colocar elementos sobrepostos, como ícones em um canto de um bloco, caixas de diálogo, ou elementos que devem ficar fixos em relação a um contêiner específico. */
+position: absolute;
+top: 5%;
+left: 5%;
+width: 90%;
+height: 90%;
+}
+aside{
+    background-color: var(--cor0);
+    padding: 10px;
+    border-radius: 10px;
+
+    box-shadow: 3px 3px 8px rgb(0, 0, 0.281);
+}
+
+aside > h3{
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px; /*Esticamos para cima, para direita, nao para baixo e também esticamos para esquerda, mas perdeu a borda arredondada. Vamos adicionar a borda:*/
+    border-radius: 10px 10px 0px 0px;
+      font-weight: normal; /*Tirar o negrito que por padrao vem nos h*/
+}
+aside > ul{
+    list-style-type: '🗸\00A0'; /*\00A0 para dar espaço entre o emoji e os números*/
+    list-style-position: inside; /*Mandar as bolinhas para dentro*/
+    columns: 2; /*Dividir a lista em duas colunas*/
+}
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 10px;
+    
+}
+
+footer a{
+color: red;
+font-weight: bolder;
+text-decoration: none;
+}
+
+footer a:hover{
+text-decoration: underline;
+color: var(--cor1);
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsividade para Sites</title>
+    <style>
+body{
+    background-color: gray;
+}
+main{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+/*Com essas duas propriedades, os textos ja vao se adaptar ao tamanho do dispositivo, mas a imagem ainda nao.*/
+    min-width: 280px;
+    max-width: 800px;
+    margin: auto;
+}
+
+p{
+    text-align: justify;
+}
+/*Com isso, a imagem tambem ja fica responsiva, mas estamos a utilizar o img directamente no conteudo. Vamos envelopa-la na tag picture e adicionar um source para uma imagem tambem pequena*/
+img{
+    width: 100%;
+}
+footer{
+       background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+
+       min-width: 320px;
+    max-width: 800px;
+    margin: auto;
+
+    margin-top: 10px;
+
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+
+    <main>
+
+    <h1>Responsividade para Sites com min-width: 280px; e max-width: 800px;</h1>
+    <picture>
+        <p>Baixamos uma imagem e com o auxílio do GIMP, editamos com 310x400 com o nome de responsivo_pequena.jpg e utilizamos a grande em &lt;img src="imagens/responsivo.jpg" alt="Responsivo"&gt; e a pequena em &lt;source media="(max-width: 800px)" srcset="imagens/responsivo_pequena.jpg"&gt;</p>
+        <source media="(max-width: 800px)" srcset="imagens/responsivo_pequena.jpg">
+        <img src="imagens/responsivo.jpg" alt="Responsivo">
+    </picture>
+    <p>
+        Responsividade para sites é a capacidade de um layout se adaptar automaticamente a diferentes tamanhos de tela (celulares, tablets, desktops), usando técnicas como fluid grids, imagens flexíveis e media queries no CSS para reorganizar o conteúdo, garantir boa usabilidade e performance em qualquer dispositivo, o que é crucial para SEO e experiência do usuário (UX). 
+    </p>
+
+    <h2>O que é responsividade?</h2>
+<p>Um site responsivo ajusta seu design (layout, fontes, imagens) para oferecer uma experiência consistente e acessível, independentemente do dispositivo usado pelo usuário. </p>
+
+<h2>Por que é importante?</h2>
+<ul>
+    <li>
+        Experiência do Usuário (UX): Evita que usuários precisem dar zoom ou rolar horizontalmente, reduzindo frustração.</li>
+        <li>SEO (Optimização para Motores de Busca): Google prioriza sites responsivos, pois usam a mesma URL e facilitam a indexação.</li>
+        <li>Acessibilidade: Garante que o site seja utilizável por pessoas com diferentes deficiências, usando HTML semântico e bom contraste de cores.</li>
+        <li>Adaptação Futura: Prepara o site para novas tecnologias e tamanhos de tela que surgirem.
+    </li>
+</ul>
+<h2>Como implementar (Técnicas Principais)</h2>
+<ul><li>
+    Viewport Meta Tag: Define a área visível para o navegador em dispositivos móveis.</li>
+    <li>Grid Fluido (Fluid Grid): Usa unidades relativas (%, vw) para o layout, em vez de pixels fixos.</li>
+    <li>Imagens Flexíveis: Imagens que redimensionam junto com o layout, como max-width: 100%.</li>
+    <li>Media Queries (CSS): Permite aplicar estilos diferentes com base nas características da tela (largura, altura, orientação).</li>
+    <li>Frameworks: Ferramentas como Bootstrap ou Flexbox simplificam o processo de criação.</li>
+</ul>
+<h2>Como testar a responsividade</h2>
+<ul>
+    <li>Ferramentas do Navegador: Use o Google Chrome DevTools (F12, ícone de dispositivo) para simular diferentes tamanhos de tela.</li>
+    <li>Testes Reais: Verifique em smartphones e tablets diferentes.</li>
+</ul>
+<p>Em resumo, um site responsivo é um padrão essencial hoje, garantindo que seu conteúdo seja acessível e agradável para todos os usuários, em qualquer lugar. </p>
+
+<h3>Extensão Auxiliar, Windows Resizer</h3>
+<p>Instale no Google Chrom a extensão Windows Resizer (a versão que aparecer com uma tela preta no meio com cores verdes nos cantos), clique nele e dê as permissões clicando ao i que aparecer. Assim que fizer isso, o esperado é que ao diminuir o tamanho da tela, essa extensão vai exibir as proporções da tela no canto inferior direito.</p>
+
+<p><strong>Observação:</strong>Sempre que quiser ver as proporções da tela no canto inferior direito com o auxílio dessa extensão, deverá clicar nela e no i.</p>
+    </main>
+    <footer>
+        Todos os direitos reservados.
+    </footer>
+</body>
+</html>
